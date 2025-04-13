@@ -22,6 +22,7 @@ let g:lightline = { 'colorscheme': 'material_vim' }
 colorscheme material 
 
 set number
+set relativenumber
 " autocmd InsertEnter * :set relativenumber
 " autocmd InsertLeave * :set norelativenumber
 autocmd InsertLeave * write
@@ -30,8 +31,6 @@ set timeoutlen=500
 
 set hlsearch
 
-set number
-set relativenumber
 
 set shiftwidth=0
 set tabstop=4

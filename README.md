@@ -4,5 +4,5 @@ Config files for stuff I use a lot.
 - linux
 - git
 - i3
-- zsh
+- zsh (with p10k)
 - vim

@@ -96,10 +96,8 @@ alias lgt="loginctl terminate-user $USER"
 alias rbt="systemctl reboot"
 alias sdn="systemctl poweroff"
 
-alias wific="nmcli device wifi connect"
-alias wifidc="nmcli con down"
-
 alias py="python3"
+alias nv="nvim"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"

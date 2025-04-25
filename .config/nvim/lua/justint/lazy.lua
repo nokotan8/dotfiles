@@ -12,7 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 require("lazy").setup(
     {
-        spec = { import = "config.plugins" },
+        spec = { import = "justint.plugins" },
         change_detection = { enabled = false },
     }
 )

@@ -1,11 +1,21 @@
 -- general
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>q", ":q<CR>")
+vim.keymap.set("n", "<leader>q", ":wq<CR>")
+vim.keymap.set("n", "<leader>Q", ":q!<CR>")
 vim.keymap.set("n", "<leader>w", "<CMD>write<CR>", { silent = true })
-vim.keymap.set({ "n", "v" }, "<leader>y", '"+y')
-vim.keymap.set({ "n", "v" }, "<leader>d", '"+d')
-vim.keymap.set({ "n", "v" }, "<leader>p", '"+p')
 
+-- clipboard
+vim.keymap.set({ "n", "v" }, "<leader>y", '"+y')
+vim.keymap.set({ "n", "v" }, "<leader>p", '"+p')
+-- vim.keymap.set({ "n", "v" }, "<leader>d", '"+d')
+
+-- paste/delete to void
+vim.keymap.set("x", "<leader>P", '\"_dP')
+vim.keymap.set({ "n", "v" }, "<leader>d", '\"_d')
+
+-- lol
+vim.keymap.set("i", "<C-c>", "<Esc>")
+vim.keymap.set("i", "<C-[>", "<Esc>")
 
 local function tree()
     local node = vim.treesitter.get_node()
@@ -36,4 +46,3 @@ vim.keymap.set({ "n", "v" }, "<leader>o", tree, {})
 -- vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]], { desc = "Exit terminal mode" })
 vim.keymap.set('n', '<leader>k', [[:split | terminal
 A]], { desc = "Exit terminal mode" })
-

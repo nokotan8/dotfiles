@@ -1,3 +1,4 @@
+" Mostly use nvim so fairly basic 
 set nocompatible
 filetype off
 
@@ -20,11 +21,7 @@ colorscheme material
 
 set number
 set relativenumber
-" autocmd InsertEnter * :set relativenumber
-" autocmd InsertLeave * :set norelativenumber
 autocmd InsertLeave * write
-
-set timeoutlen=500
 
 set hlsearch
 
@@ -38,11 +35,6 @@ set ignorecase
 
 set shell=/bin/zsh
 
-" inoremap {      {}<Left>
-" inoremap {<CR>  {<CR>}<Esc>O
-" inoremap {{     {
-" inoremap {}     {}
-
 " Move lines up and down
 nnoremap <A-down> :m .+1<CR>==
 nnoremap <A-up> :m .-2<CR>==
@@ -50,27 +42,6 @@ inoremap <A-down> <Esc>:m .+1<CR>==gi
 inoremap <A-up> <Esc>:m .-2<CR>==gi
 vnoremap <A-down> :m '>+1<CR>gv=gv
 vnoremap <A-up> :m '<-2<CR>gv=gv
-
-" Movement in insert and command mode
-" inoremap <C-h> <Left>
-" inoremap <C-j> <Down>
-" inoremap <C-k> <Up>
-" inoremap <C-l> <Right>
-" cnoremap <C-h> <Left>
-" cnoremap <C-j> <Down>
-" cnoremap <C-k> <Up>
-" cnoremap <C-l> <Right>
-
-
-" Disable arrow keys !!!!
-"u noremap <Up> <Nop>
-" noremap <Down> <Nop>
-" noremap <Left> <Nop>
-" noremap <Right> <Nop>
-" noremap! <Up> <Nop> 
-" noremap! <Down> <Nop>
-" noremap! <Left> <Nop>
-" noremap! <Right> <Nop>
 
 if (has('termguicolors'))
   set termguicolors

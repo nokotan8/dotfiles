@@ -4,6 +4,10 @@ vim.keymap.set("n", "<leader>q", ":q<CR>")
 vim.keymap.set("n", "<leader>w", "<CMD>write<CR>", { silent = true })
 vim.keymap.set("n", "<leader>bd", ":bd<CR>")
 
+-- move lines
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
 -- clipboard
 vim.keymap.set({ "n", "v" }, "<leader>y", '"+y')
 vim.keymap.set({ "n", "v" }, "<leader>p", '"+p')
@@ -17,7 +21,15 @@ vim.keymap.set({ "n", "v" }, "<leader>d", '\"_d')
 vim.keymap.set('n', '<leader>[', ':bp<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>]', ':bn<CR>', { noremap = true, silent = true })
 
-vim.keymap.set("i", "<C-c>", "<Esc>")
+vim.keymap.set("n", "J", "mzJ`z")
+
+-- keep cursor in the middle
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "N", "Nzzzv")
+
+-- vim.keymap.set("i", "<C-c>", "<Esc>")
 
 local function tree()
     local node = vim.treesitter.get_node()

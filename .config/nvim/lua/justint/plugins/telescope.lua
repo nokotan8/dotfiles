@@ -14,13 +14,30 @@ return {
             }
         })
         local builtin = require('telescope.builtin')
+        local action_state = require('telescope.actions.state')
         vim.keymap.set('n', '<leader>f', builtin.find_files, { silent = true })
         vim.keymap.set("n", "<leader>g", builtin.live_grep, { silent = true })
         vim.keymap.set("n", "<leader>r", ":Telescope oldfiles<CR>", { silent = true })
-        vim.keymap.set('n', '<leader>h', builtin.help_tags, { desc = 'Telescope help tags' })
-        vim.keymap.set('n', '<leader>co', builtin.colorscheme, { desc = 'Telescope help tags' })
+        vim.keymap.set('n', '<leader>H', builtin.help_tags, { desc = 'Telescope help tags' })
+        vim.keymap.set('n', '<leader>co', builtin.colorscheme, { desc = 'Change colorscheme' })
         vim.keymap.set('n', '<leader>lt', builtin.treesitter, { desc = 'List functions' })
-        vim.keymap.set('n', '<leader>lq', '<cmd>Telescope diagnostics<CR>', { desc = 'List functions' })
+        vim.keymap.set('n', '<leader>lq', '<cmd>Telescope diagnostics<CR>')
+        vim.keymap.set('n', '<leader>h', function()
+            builtin.buffers({
+                attach_mappings = function(prompt_bufnr, map)
+                    local delete_buf = function()
+                        local current_picker = action_state.get_current_picker(prompt_bufnr)
+                        current_picker:delete_selection(function(selection)
+                            vim.api.nvim_buf_delete(selection.bufnr, { force = true })
+                        end)
+                    end
+
+                    map('n', '<leader>d', delete_buf)
+
+                    return true
+                end
+            })
+        end)
 
         require('telescope').load_extension('fzf')
         require("telescope").load_extension("ui-select")

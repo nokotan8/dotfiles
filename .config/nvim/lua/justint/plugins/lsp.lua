@@ -32,7 +32,8 @@ return {
                 "lua_ls",
                 "pylsp",
                 "svelte",
-                "clangd"
+                "clangd",
+                "ts_ls"
             },
             handlers = {
                 function(server_name)

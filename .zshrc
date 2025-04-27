@@ -1,8 +1,6 @@
 # Extra stuff
 source ~/.zshrc_priv
 
-eval "$(rbenv init -)"
-
 . /usr/share/nvm/init-nvm.sh
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
@@ -73,6 +71,16 @@ if [[ "$(tty)" == '/dev/tty1' ]]; then
 	exec startx
 fi
 
+export EDITOR="nvim"
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
+
 # initialise autocompletion
 autoload -Uz compinit
 compinit
@@ -101,8 +109,11 @@ alias sdn="systemctl poweroff"
 alias py="python3"
 alias nv="nvim"
 
+eval "$(rbenv init -)"
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+
+eval "$(zoxide init zsh)"
 
 # https://www.atlassian.com/git/tutorials/dotfiles
 alias config='/usr/bin/git --git-dir=/home/justint/.cfg/ --work-tree=/home/justint'

@@ -10,7 +10,7 @@ return {
         null_ls.setup({
             sources = {
                 null_ls.builtins.formatting.prettierd.with({
-                    disabled_filetypes = { "svelte" },
+                    -- disabled_filetypes = { "svelte" },
                 }),
                 null_ls.builtins.formatting.rustywind,
                 null_ls.builtins.formatting.sqruff,

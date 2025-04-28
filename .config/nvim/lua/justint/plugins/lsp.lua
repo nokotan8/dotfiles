@@ -48,7 +48,6 @@ return {
                             vim.api.nvim_create_autocmd("BufWritePost", {
                                 pattern = { "*.js", "*.ts" },
                                 callback = function(ctx)
-                                    -- this bad boy updates imports between svelte and ts/js files
                                     client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.match })
                                 end,
                             })
@@ -122,8 +121,19 @@ return {
             }, {})
         })
 
-        local autocmd = vim.api.nvim_create_autocmd
+        -- Virtual text
+        vim.diagnostic.config({
+            virtual_text = {
+                prefix = '■',
+                spacing = 4,
+            },
+            signs = true,
+            underline = true,
+            update_in_insert = false,
+            severity_sort = true,
+        })
 
+        local autocmd = vim.api.nvim_create_autocmd
         autocmd('LspAttach', {
             callback = function(e)
                 local opts = { buffer = e.buf }

@@ -32,7 +32,7 @@ return {
                         end)
                     end
 
-                    map('n', '<leader>d', delete_buf)
+                    map('n', '<leader>d', delete_buf) -- delete buffer with <leader>b
 
                     return true
                 end

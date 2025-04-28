@@ -1,0 +1,4 @@
+[manager]
+ratio = [2, 3, 3]
+sort_dir_first = true
+sort_sensitive = false

@@ -1,7 +1,8 @@
 spaceship remove user
 spaceship remove async
+spaceship remove git
+spaceship add git
 
-SPACESHIP_USER_SHOW=always
 SPACESHIP_PROMPT_ADD_NEWLINE=false
 SPACESHIP_CHAR_SYMBOL="❯"
 SPACESHIP_CHAR_PREFIX="  "

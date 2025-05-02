@@ -4,6 +4,6 @@ Config files for stuff I use a lot.
 - linux
 - git
 - i3
-- zsh (with p10k)
+- zsh
 - neovim
 - dunst

@@ -2,7 +2,6 @@
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>q", ":q<CR>")
 vim.keymap.set("n", "<leader>w", ":wa<CR>", { silent = true })
-vim.keymap.set("n", "<leader>bd", ":bd<CR>")
 
 -- move lines
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")

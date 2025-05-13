@@ -122,16 +122,16 @@ return {
         })
 
         -- Virtual text
-        vim.diagnostic.config({
-            virtual_text = {
-                prefix = '■',
-                spacing = 4,
-            },
-            signs = true,
-            underline = true,
-            update_in_insert = false,
-            severity_sort = true,
-        })
+        -- vim.diagnostic.config({
+        --     virtual_text = {
+        --         prefix = '■',
+        --         spacing = 4,
+        --     },
+        --     signs = true,
+        --     underline = true,
+        --     update_in_insert = false,
+        --     severity_sort = true,
+        -- })
 
         local autocmd = vim.api.nvim_create_autocmd
         autocmd('LspAttach', {

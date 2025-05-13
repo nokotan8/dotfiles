@@ -27,6 +27,7 @@ return {
         vim.keymap.set('n', '<leader>lq', '<cmd>Telescope diagnostics<CR>')
         vim.keymap.set('n', '<leader>b', function()
             builtin.buffers({
+                initial_mode = "normal",
                 attach_mappings = function(prompt_bufnr, map)
                     local delete_buf = function()
                         local current_picker = action_state.get_current_picker(prompt_bufnr)

@@ -3,6 +3,11 @@ source ~/.zshrc_priv
 
 export ZSH=$HOME/.zsh
 
+# IMF setup
+GTK_IM_MODULE=fcitx
+QT_IM_MODULE=fcitx
+XMODIFIERS=@im=fcitx
+
 if [[ "$(tty)" == '/dev/tty1' ]]; then
 	exec startx
 fi

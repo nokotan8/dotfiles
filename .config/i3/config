@@ -29,6 +29,8 @@ exec --no-startup-id pasystray
 
 exec --no-startup-id flameshot &
 
+exec --no-startup-id fcitx5 -d
+
 # Change scale
 # exec --no-startup-id xrdb ~/.Xresources
 

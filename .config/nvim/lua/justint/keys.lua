@@ -17,8 +17,8 @@ vim.keymap.set("x", "<leader>P", '\"_dP')
 vim.keymap.set({ "n", "v" }, "<leader>d", '\"_d')
 
 -- buffer nav
-vim.keymap.set('n', '<leader>[', ':bp<CR>', { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>]', ':bn<CR>', { noremap = true, silent = true })
+-- vim.keymap.set('n', '<leader>[', ':bp<CR>', { noremap = true, silent = true })
+-- vim.keymap.set('n', '<leader>]', ':bn<CR>', { noremap = true, silent = true })
 
 vim.keymap.set("n", "J", "mzJ`z")
 
@@ -57,5 +57,5 @@ end
 
 vim.keymap.set({ "n", "v" }, "<leader>o", tree, {})
 -- vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]], { desc = "Exit terminal mode" })
-vim.keymap.set('n', '<leader>k', [[:split | terminal
-A]], { desc = "Exit terminal mode" })
+-- vim.keymap.set('n', '<leader>k', [[:split | terminal
+-- A]], { desc = "Exit terminal mode" })

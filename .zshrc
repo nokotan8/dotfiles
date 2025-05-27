@@ -79,6 +79,12 @@ alias sdn="systemctl poweroff"
 alias py="python3"
 alias nv="nvim"
 
+alias gs="git status --short"
+alias ga="git add"
+alias gc="git commit"
+alias gp="git push"
+alias gu="git pull" # pull ~= update
+
 # nvm
 . /usr/share/nvm/init-nvm.sh
 eval "$(rbenv init -)"

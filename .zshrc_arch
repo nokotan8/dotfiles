@@ -1,0 +1,30 @@
+
+if [[ "$(tty)" == '/dev/tty1' ]]; then
+	exec startx
+fi
+
+# IMF setup
+GTK_IM_MODULE=fcitx
+QT_IM_MODULE=fcitx
+XMODIFIERS=@im=fcitx
+
+# [[ -z "${plugins[*]}" ]] && plugins=(git fzf extract)
+#
+# Fish-like syntax highlighting and autosuggestions
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+# Use history substring search
+source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+
+# Cleanup orphaned packages
+alias cleanup="sudo pacman -Rsn $(pacman -Qtdq)"
+
+alias lgt="loginctl terminate-user $USER"
+alias rbt="systemctl reboot"
+alias sdn="systemctl poweroff"
+
+# nvm
+. /usr/share/nvm/init-nvm.sh
+eval "$(rbenv init -)"
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"

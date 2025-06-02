@@ -42,8 +42,8 @@ compinit
 
 # history setup
 export HISTFILE="$ZSH/.zsh_history"
-SAVEHIST=1000
-HISTSIZE=999
+SAVEHIST=5000
+HISTSIZE=4999
 setopt SHARE_HISTORY
 export HISTIGNORE="&:[bf]g:c:clear:history:exit:q:pwd:* --help"
 export HISTCONTROL=ignoreboth

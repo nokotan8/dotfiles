@@ -54,7 +54,6 @@ export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 # enable command-subsitution in PS1
 setopt PROMPT_SUBST
 
-
 alias py="python3"
 alias nv="nvim"
 
@@ -63,7 +62,7 @@ alias ga="git add"
 alias gc="git commit"
 alias gp="git push"
 alias gu="git pull" # pull ~= update
-
+alias gd="git diff"
 
 # https://www.atlassian.com/git/tutorials/dotfiles
 alias config='/usr/bin/git --git-dir=/home/justint/.cfg/ --work-tree=/home/justint'

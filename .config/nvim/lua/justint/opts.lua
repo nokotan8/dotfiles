@@ -19,4 +19,4 @@ vim.opt.hlsearch = false
 vim.opt.scrolloff = 6
 vim.opt.signcolumn = "yes"
 vim.opt.foldopen = "mark,percent,quickfix,search,tag,undo"
-vim.opt.mouse = "nv"
+vim.opt.mouse = "a"

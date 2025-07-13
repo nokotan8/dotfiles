@@ -1,3 +1,5 @@
+# Extra stuff
+source ~/.zshrc_priv
 
 if [[ "$(tty)" == '/dev/tty1' ]]; then
 	exec startx

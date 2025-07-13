@@ -1,11 +1,11 @@
-# Extra stuff
-source ~/.zshrc_priv
-
 export ZSH=$HOME/.zsh
 
-# Linux/Arch specific stuff
 if [[ "$(uname)" == "Linux" ]]; then
+    # Linux/Arch specific
     source ~/.zshrc_arch
+elif [[ "$(uname)" == "Darwin" ]]; then
+    # Mac specific
+    source ~/.zshrc_mac
 fi
 
 # Use custom `less` colors for `man` pages.
@@ -33,6 +33,7 @@ function y() {
 	fi
 	rm -f -- "$tmp"
 }
+
 # zoxide
 eval "$(zoxide init zsh)"
 
@@ -54,7 +55,6 @@ export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 # enable command-subsitution in PS1
 setopt PROMPT_SUBST
 
-
 alias py="python3"
 alias nv="nvim"
 
@@ -64,8 +64,7 @@ alias gc="git commit"
 alias gp="git push"
 alias gu="git pull" # pull ~= update
 
-
 # https://www.atlassian.com/git/tutorials/dotfiles
-alias config='/usr/bin/git --git-dir=/home/justint/.cfg/ --work-tree=/home/justint'
+alias config="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
 
 eval "$(starship init zsh)"

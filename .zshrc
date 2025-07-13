@@ -63,6 +63,7 @@ alias ga="git add"
 alias gc="git commit"
 alias gp="git push"
 alias gu="git pull" # pull ~= update
+alias gd="git diff"
 
 # https://www.atlassian.com/git/tutorials/dotfiles
 alias config="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
